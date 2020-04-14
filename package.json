@@ -1,7 +1,7 @@
 {
-  "name": "meta-reader",
-  "productName": "Electron Meta-reader",
-  "description": "Picture meta reader",
+  "name": "electron-image-meta-reader",
+  "productName": "Electron image meta-reader",
+  "description": "Image meta reader",
   "version": "0.0.0",
   "private": true,
   "author": "SimHub <simhub.dev@gmail.com",
