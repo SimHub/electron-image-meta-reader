@@ -1,12 +1,12 @@
 {
-  "name": "electron-boilerplate",
-  "productName": "Electron Boilerplate",
-  "description": "Starter for your Electron application",
+  "name": "meta-reader",
+  "productName": "Electron Meta-reader",
+  "description": "Picture meta reader",
   "version": "0.0.0",
   "private": true,
-  "author": "Mr. Gumby <mr.gumby@example.com>",
-  "copyright": "© 2017, Gumby inc.",
-  "homepage": "http://example.com",
+  "author": "SimHub <simhub.dev@gmail.com",
+  "copyright": "© 2020, Simon Lackmann",
+  "homepage": "",
   "main": "app/background.js",
   "build": {
     "appId": "com.example.electron-boilerplate",
