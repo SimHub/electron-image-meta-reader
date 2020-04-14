@@ -34,15 +34,17 @@ app.on("ready", () => {
   setApplicationMenu();
 
   const mainWindow = createWindow("main", {
-    width: 1000,
-    height: 600
+    width: 440,
+    height: 480,
+    // frame: false,
+    titleBarStyle: "hidden",
   });
 
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "app.html"),
       protocol: "file:",
-      slashes: true
+      slashes: true,
     })
   );
 
