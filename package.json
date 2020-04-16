@@ -1,6 +1,6 @@
 {
   "name": "electron-image-meta-reader",
-  "productName": "EIMR",
+  "productName": "IMAGE-META-READER",
   "description": "Image meta reader",
   "version": "0.0.1",
   "private": true,
