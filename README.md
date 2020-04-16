@@ -2,6 +2,7 @@
 
 <video src="./video/eimr.webm" poster="./video/eimr.png"> 
   Sorry, your browser doesn't support embedded videos
+  <a href="./video/eimr.png" alt="app picture"></a>
   </video>
 
 
