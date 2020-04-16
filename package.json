@@ -1,8 +1,8 @@
 {
   "name": "electron-image-meta-reader",
-  "productName": "Electron image meta-reader",
+  "productName": "EIMR",
   "description": "Image meta reader",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "author": "SimHub <simhub.dev@gmail.com",
   "copyright": "© 2020, Simon Lackmann",
@@ -28,13 +28,14 @@
     "e2e": "mocha temp/e2e.js --require source-map-support/register",
     "test": "npm run unit && npm run e2e",
     "start": "node build/start.js",
-    "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
+    "release": "webpack --config=build/webpack.app.config.js --env=production && electron-builder"
   },
   "dependencies": {
     "exif": "^0.6.0",
     "exif-parser": "^0.1.12",
     "fs-jetpack": "^2.1.0",
-    "jquery": "^3.5.0"
+    "jquery": "^3.5.0",
+    "request": "^2.88.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

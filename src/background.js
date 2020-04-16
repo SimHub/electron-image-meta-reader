@@ -34,8 +34,8 @@ app.on("ready", () => {
   setApplicationMenu();
 
   const mainWindow = createWindow("main", {
-    width: 440,
-    height: 480,
+    width: 430,
+    height: 700,
     // frame: false,
     titleBarStyle: "hidden",
   });

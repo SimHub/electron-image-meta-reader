@@ -12,7 +12,7 @@ import { remote } from "electron";
 import jetpack from "fs-jetpack";
 import env from "env";
 import * as $ from "../node_modules/jquery/dist/jquery";
-import feather from "./meta_reader/feather";
+import feather from "./feather";
 
 const app = remote.app;
 const dialog = remote.dialog;
@@ -22,9 +22,9 @@ var ExifImage = require("exif").ExifImage;
 const https = require("https");
 const http = require("http");
 var request = require("request").defaults({ encoding: null });
-const pL = require("./meta_reader/pLoader.js");
-const tEfx = require("./meta_reader/txtEffect.js");
-const gdT = require("./meta_reader/gradientTransition.js");
+const pL = require("./pLoader.js");
+const tEfx = require("./txtEffect.js");
+const gdT = require("./gradientTransition.js");
 const appDir = jetpack.cwd(app.getAppPath());
 
 // Holy crap! This is browser window with HTML and stuff, but I can read
