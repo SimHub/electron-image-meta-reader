@@ -27,7 +27,6 @@ body {
     #355c7d
   );
 }
-
 header {
   position: absolute;
   height: 250px;
@@ -103,10 +102,6 @@ section.main {
 }
 
 /*//LOADER///*/
-#loader,
-#msg {
-  display: none;
-}
 #loader {
   width: 80px;
   height: 50px;
@@ -114,6 +109,23 @@ section.main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+#loader,
+#msg {
+  display: none;
+}
+
+/*-- progressbar --*/
+#pgr {
+  left: -38px;
+  bottom: -22px;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+#pgr[value]::-webkit-progress-bar {
+  -webkit-appearance: none;
+  appearance: none;
+  background: cornflowerblue;
 }
 #msg {
   /* font-family: monospace; */

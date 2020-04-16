@@ -43,6 +43,9 @@ const ref = $("#refresh");
 
 tEfx.txtEffect.show(); //show text effect
 
+// pL.pLoader.show(); //LOADER
+
+const $progressBar = $("#pgr");
 const mC = document.querySelector("#mainContainer");
 let fileNames = {};
 let attr = {};
@@ -136,10 +139,13 @@ const fileFilterOption = {
         "XWD",
         "CIFF",
         "DNG",
+        "RAF",
       ],
     },
   ],
 };
+
+// pL.pLoader.show();
 
 // console.log(fancyTitle);
 //###HIstogram######///
@@ -207,7 +213,7 @@ function dropFile(dropElement) {
     event.preventDefault();
     event.stopPropagation();
     attr.id = $(this).attr("id");
-    checkAttr(attr, $(this), "dragover");
+    // checkAttr(attr, $(this), "dragover");
     fancyH1.style.opacity = 0.1;
 
     gdT.gradientTransition(self, event);
@@ -216,7 +222,7 @@ function dropFile(dropElement) {
   dropElement.on("dragleave", function (event) {
     event.preventDefault();
     event.stopPropagation();
-    checkAttr(attr, $(this), "dragleave");
+    // checkAttr(attr, $(this), "dragleave");
     fancyH1.style.opacity = 1;
   });
   dropElement.on("drop", function (event) {
@@ -256,13 +262,15 @@ function dropFile(dropElement) {
         } catch (err) {
           // alert(String);
           pL.pLoader.hide(); //LOADER
+          $progressBar.attr("max", 0);
+          $progressBar.val(0);
           tBody.append(
             `<tr><td class="error"><i data-feather="alert-triangle"></i> Cannot read property 'path'</td></tr>`
           );
         }
       }
     } /// WRITE ON SCREEN
-    checkAttr(attr, $(this), "drop");
+    // checkAttr(attr, $(this), "drop");
   });
 
   window.addEventListener(
@@ -291,12 +299,16 @@ function resp(imgUrl, response) {
   let newImgName;
   response.on("readable", () => {
     request.get(imgUrl, function (err, res, body) {
+      showProgressBar(body.length);
       exif(body); // exif
     });
   });
 }
 function exif(body) {
   //////// EXIF-IMAGE PARSER////////////////
+  // let base64 = body.toString("base64");
+  // console.log(base64);
+  //var parser = require('exif-parser').create(buffer);
   try {
     mC.classList.remove("mainContainerDragAndDrop"); //Remove background / mainContainer
     new ExifImage({ image: body }, function (error, exifData) {
@@ -306,8 +318,16 @@ function exif(body) {
         );
         console.log("Error: " + error.message);
         pL.pLoader.hide(); //LOADER
+        $progressBar.attr("max", 0);
+        $progressBar.val(0);
+        // $progressBar.val("");
+        // $progressBar.attr("max", "");
       } else {
         pL.pLoader.hide(); //LOADER
+        $progressBar.attr("max", 0);
+        $progressBar.val(0);
+        // $progressBar.val("");
+        // $progressBar.attr("max", "");
         iter(exifData);
       }
     });
@@ -316,11 +336,15 @@ function exif(body) {
     const result = parser.parse();
     const resultJson = JSON.stringify(result, null, 2);
     pL.pLoader.hide(); //LOADER
+    $progressBar.attr("max", 0);
+    $progressBar.val(0);
     fancyH1.style.opacity = 0; /// TEXT EFFECT HIDE
     iter(result);
     ///////////////////////////////
   } catch (err) {
     pL.pLoader.hide(); //LOADER
+    $progressBar.attr("max", 0);
+    $progressBar.val(0);
     console.log("catch: " + err);
   }
 }
@@ -329,8 +353,9 @@ function readImgFile(filePath) {
   let imgExt = getFileExtension(filePath);
   if (_filter.includes(imgExt.toUpperCase())) {
     // validate extention ///
-    console.log("VALID EXTANSION");
+    // console.log("VALID EXTANSION");
     const buf = fs.readFileSync(filePath);
+    showProgressBar(filePath);
     exif(buf);
   } else {
     let String =
@@ -343,6 +368,8 @@ function readImgFile(filePath) {
       `<tr><td class="error"><i data-feather="alert-triangle"></i> ${String}</td></tr>`
     );
     pL.pLoader.hide();
+    $progressBar.val(0);
+    $progressBar.attr("max", 0);
     return;
   }
 }
@@ -384,7 +411,22 @@ function iter(o) {
     });
   });
 }
+function showProgressBar(file) {
+  let fileSize = null;
+  if (typeof file === "string") {
+    let stats = fs.statSync(file);
+    let fileSizeInBytes = stats["size"];
+    fileSize = (fileSizeInBytes / 10000).toFixed(0);
+    // fileSize = fileSizeInBytes;
+  } else {
+    fileSize = Math.floor(file / 10000);
+  }
+  // console.log(fileSize);
+  $progressBar.attr("max", fileSize);
+  for (let i = 0; i < fileSize; i += 1) {
+    $progressBar.val(i);
+  }
+}
 // INIT
 feather.replace();
 dropFile($("#mainContainer"));
-
