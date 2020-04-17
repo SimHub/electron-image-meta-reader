@@ -1,7 +1,8 @@
 # Image Meta Reader
 
-<video controls poster="video/eimr.png"> 
-  <source src="video/eimr.webm" type='video/webm' />
+<video style="display:block; width:100%; height:auto;" autoplay controls loop="loop"> 
+  <source src="https://github.com/SimHub/electron-image-meta-reader/tree/master/video/eimr.webm" type='video/webm' />
+  <source src="https://github.com/SimHub/electron-image-meta-reader/tree/master/video/eimr.ogv" type='video/ogg' />
   </video>
 
 

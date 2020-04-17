@@ -301,6 +301,9 @@ table#table_id::-webkit-scrollbar-track {
   align-items: center;
   padding: 2%;
 }
+.fixed_header tr:nth-child(even) td {
+  color: whitesmoke;
+}
 .fixed_header td span.lBadge {
   background: #929292bf;
   color: white;

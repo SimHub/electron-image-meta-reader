@@ -183,6 +183,8 @@ function loadImg(e) {
       // console.log("No file selected");
       return;
     }
+    tBody.html(""); //empty view on drop
+    tEfx.txtEffect.hide(); // TEXT EFFECT
     // console.log(fileNames[0]);
     readImgFile(fileNames[0]);
   });
@@ -422,8 +424,10 @@ function showProgressBar(file) {
     fileSize = Math.floor(file / 10000);
   }
   // console.log(fileSize);
+  $progressBar.val(1);
   $progressBar.attr("max", fileSize);
-  for (let i = 0; i < fileSize; i += 1) {
+  for (let i = 2; i < fileSize; i += 1) {
+    // debugger;
     $progressBar.val(i);
   }
 }
