@@ -1,4 +1,6 @@
-# Image Meta Reader  <img src="/video/eimr.png" width="100" height="240" alt="app logo"> 
+<img src="/video/eimr.png" width="58" height="58" alt="app logo">   
+
+# Image Meta Reader   
 
 
 ## Development - <small><i>using electron-boilerplate</i></small>
