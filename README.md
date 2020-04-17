@@ -1,4 +1,4 @@
-# Image Meta Reader
+# Image Meta Reader ![app image logo](/video/eimr.png)
 
 <img src="/video/eimr.gif" alt="app gif">
 
