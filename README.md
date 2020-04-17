@@ -2,10 +2,10 @@
 
 # Image Meta Reader  
 ![GitHub All Releases](https://img.shields.io/github/downloads/SimHub/electron-image-meta-reader/total?style=for-the-badge)
+
 ![GitHub language count](https://img.shields.io/github/languages/count/SimHub/electron-image-meta-reader?style=for-the-badge)
+
 ![GitHub search hit counter](https://img.shields.io/github/search/SimHub/electron-image-meta-reader/goto?style=for-the-badge)
-![github
-license](https://img.shields.io/github/license/SimHub/electron-image-meta-reader?style=for-the-badge) 
 
 
 <img src="/video/eimr.gif" alt="app gif">
