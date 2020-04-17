@@ -1,4 +1,4 @@
-<img src="/video/eimr.png" width="58" height="58" alt="app logo">   
+<img src="/video/eimr.png" width="120" alt="app logo">   
 
 # Image Meta Reader   
 
