@@ -9,7 +9,7 @@
 
 ## Install App  
 
-<a href="https://github.com/SimHub/electron-image-meta-reader/releases/tag/8.0.1"><img src="/video/eimr.png" width="50" alt="app logo"></a>   
+<a href="https://github.com/SimHub/electron-image-meta-reader/releases/tag/8.0.1"><img src="/video/eimr.png" width="50" alt="app logo"> Install</a>   
 
 ## Install for Development
 
