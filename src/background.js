@@ -38,6 +38,9 @@ app.on("ready", () => {
     height: 700,
     // frame: false,
     titleBarStyle: "hidden",
+    webPreferences: {
+      nodeIntegration: true,
+    },
   });
 
   mainWindow.loadURL(
